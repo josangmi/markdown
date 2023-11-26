@@ -68,6 +68,9 @@ configure_firewall() {
     ip6tables -L
     ip6tables -t nat -nL --line
 
+    note "保存 iptables 规则"
+    netfilter-persistent save
+    
     note "iptables和ip6tables规则配置完成"
 }
 
