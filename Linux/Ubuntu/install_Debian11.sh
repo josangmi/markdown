@@ -40,7 +40,7 @@ configure_firewall() {
     iptables -F
     iptables -X
     iptables -A INPUT -i lo -j ACCEPT
-    iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+    iptables -A INPUT -p tcp --dport 8283 -j ACCEPT
     iptables -A INPUT -p tcp --dport 80 -j ACCEPT
     iptables -A INPUT -p tcp --dport 443 -j ACCEPT
     iptables -A INPUT -p udp --dport 8389 -j ACCEPT
@@ -56,7 +56,7 @@ configure_firewall() {
     ip6tables -F
     ip6tables -X
     ip6tables -A INPUT -i lo -j ACCEPT
-    ip6tables -A INPUT -p tcp --dport 22 -j ACCEPT
+    ip6tables -A INPUT -p tcp --dport 8283 -j ACCEPT
     ip6tables -A INPUT -p tcp --dport 80 -j ACCEPT
     ip6tables -A INPUT -p tcp --dport 443 -j ACCEPT
     ip6tables -A INPUT -p udp --dport 8389 -j ACCEPT
