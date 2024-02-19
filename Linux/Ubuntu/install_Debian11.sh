@@ -48,7 +48,7 @@ install_software() {
 add_user() {
     note "添加用户Loong并赋予sudo权限"
     useradd -m loong
-    passwd Loong2024#
+    passwd loong
     usermod -aG sudo loong
     sudo -l -U loong
     note "用户Loong添加完成并已赋予sudo权限"
