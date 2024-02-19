@@ -103,6 +103,8 @@ configure_firewall() {
 main() {
   note "开始执行脚本"
   update_system
+  install_software
+  add_user
   configure_firewall
   note "脚本执行完成"
 }
