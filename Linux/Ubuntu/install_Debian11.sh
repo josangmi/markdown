@@ -50,6 +50,7 @@ add_user() {
     useradd -m loong
     passwd Loong2024#
     usermod -aG sudo loong
+    sudo -l -U loong
     note "用户Loong添加完成并已赋予sudo权限"
 }
 
