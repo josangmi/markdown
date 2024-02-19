@@ -32,6 +32,28 @@ update_system() {
     note "系统更新完成"
 }
 
+# 安装sudo，删除vim-common，安装vim
+install_software() {
+    note "检查并安装sudo"
+    apt-get install sudo -y
+
+    note "删除vim-common"
+    apt-get remove vim-common -y
+
+    note "安装vim"
+    apt-get install vim -y
+}
+
+# 添加普通用户并赋予sudo权限
+add_user() {
+    note "添加用户Loong并赋予sudo权限"
+    useradd -m loong
+    passwd Loong2024#
+    usermod -aG sudo loong
+    note "用户Loong添加完成并已赋予sudo权限"
+}
+
+
 # 配置iptables和ip6tables规则
 configure_firewall() {
     note "开始配置iptables规则"
