@@ -47,13 +47,12 @@ install_software() {
 # 添加普通用户并赋予sudo权限
 add_user() {
     note "添加用户Loong并赋予sudo权限"
-    useradd -m loong
-    passwd Loong2024#
+    useradd -m -s /bin/bash loong
+    passwd loong
     usermod -aG sudo loong
     sudo -l -U loong
     note "用户Loong添加完成并已赋予sudo权限"
 }
-
 
 # 配置iptables和ip6tables规则
 configure_firewall() {
@@ -104,7 +103,7 @@ main() {
   note "开始执行脚本"
   update_system
   install_software
-  # add_user
+  add_user
   configure_firewall
   note "脚本执行完成"
 }
