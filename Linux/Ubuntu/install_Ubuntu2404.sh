@@ -68,7 +68,7 @@ configure_firewall() {
     iptables -A INPUT -p tcp --dport 443 -j ACCEPT
     iptables -A INPUT -p udp --dport 8389 -j ACCEPT
     iptables -A INPUT -p udp --dport 15951 -j ACCEPT
-    iptables -A INPUT -p udp --dport 20000:50000 -j ACCEPT
+    iptables -A INPUT -p udp --dport 20000:30000 -j ACCEPT
     iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
     iptables -P INPUT DROP
     iptables -P OUTPUT ACCEPT
@@ -85,7 +85,7 @@ configure_firewall() {
     ip6tables -A INPUT -p tcp --dport 443 -j ACCEPT
     ip6tables -A INPUT -p udp --dport 8389 -j ACCEPT
     ip6tables -A INPUT -p udp --dport 15951 -j ACCEPT
-    ip6tables -A INPUT -p udp --dport 20000:50000 -j ACCEPT
+    ip6tables -A INPUT -p udp --dport 20000:30000 -j ACCEPT
     ip6tables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
     ip6tables -P INPUT DROP
     ip6tables -P OUTPUT ACCEPT
