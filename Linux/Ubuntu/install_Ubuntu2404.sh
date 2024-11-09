@@ -72,7 +72,7 @@ configure_firewall() {
     iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
     iptables -P INPUT DROP
     iptables -P OUTPUT ACCEPT
-    iptables -t nat -A PREROUTING -p udp --dport 20000:50000 -j DNAT --to-destination :8389
+    iptables -t nat -A PREROUTING -p udp --dport 20000:30000 -j DNAT --to-destination :8389
     iptables -L
     iptables -t nat -nL --line
 
@@ -89,7 +89,7 @@ configure_firewall() {
     ip6tables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
     ip6tables -P INPUT DROP
     ip6tables -P OUTPUT ACCEPT
-    ip6tables -t nat -A PREROUTING -p udp --dport 20000:50000 -j DNAT --to-destination :8389
+    ip6tables -t nat -A PREROUTING -p udp --dport 20000:30000 -j DNAT --to-destination :8389
     ip6tables -L
     ip6tables -t nat -nL --line
 
